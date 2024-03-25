@@ -1,3 +1,26 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+- By passing the mongodb query or specialized strings like regular expressions as query parameters, the attacker can be able
+to get the information - which is totally unintended.
+
+THe secure version prevents above vulnerability by sanitizing the query parameters.
+
+here's what we did in secure.js:
+
+  // Input validation: Ensure username is a string
+  if (typeof username !== 'string') {
+    return res.status(400).send('Invalid username format');
+  }
+
+  // Sanitize username input: Prevent NoSQL injection
+  const sanitizedUsername = username.replace(/[^\w\s]/gi, ''); // Remove non-alphanumeric characters
+
+
 Which CIA property does tampering violate?
+
+- confidentiality
+
 What additional security mechanisms can you incorporate?
+
+- input validation
+- preventing no-sql injection by sanitizing.
