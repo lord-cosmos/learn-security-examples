@@ -1,1 +1,21 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+
+1. CSRF vulnerability : different site cant make a request to server resource after getting
+the session details /cookies.
+It's a type of attack where a malicious website tricks a user's browser 
+into making unintended and unauthorized requests to a different website where the user is authenticated.
+
+2. by setting below cookie options, we can prevent exploit of vulnerability.
+
+
+app.use(
+  session({
+    secret: `${secret}`,
+    cookie: {
+        httpOnly: true,
+        sameSite: true,
+    },
+    resave: false,
+    saveUninitialized: false
+  })
