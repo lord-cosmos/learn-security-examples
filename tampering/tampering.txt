@@ -1,4 +1,5 @@
 the vulnerability is an unintended link has been injected to the DOM or html page.
+This can lead to XSS - cross site scripting attack
 
 the secure version escapes the html from user form input and processes it.
 therefore, the html in the input will not matter.
