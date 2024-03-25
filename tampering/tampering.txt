@@ -1,0 +1,11 @@
+the vulnerability is an unintended link has been injected to the DOM or html page.
+
+the secure version escapes the html from user form input and processes it.
+therefore, the html in the input will not matter.
+
+  const sanitizedName = escapeHTML(req.body.name.trim());
+  req.session.user = sanitizedName;
+
+
+- Tampering violate the Integrity property of CIA.
+
