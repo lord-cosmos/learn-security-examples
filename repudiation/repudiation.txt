@@ -1,2 +1,11 @@
 - Briefly explain the vulnerability and why the secure version is better at preventing repudiation than the insecure version.
+
+the vulnerability is there is no way of any log mechanism that actually persists somewhere on the server.
+the secure version is logging the data using logStream - creating a server log.
+
 - What additional security mechanisms can you incorporate to prevent such attacks?
+
+1. probably, an algorithm/mechanism to detect any suspicious activity using logs.
+2. auditing.
+3. Proper authorization/access control on log data
+
