@@ -1,2 +1,10 @@
 - Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+1. the vulnerability is any error in invalid query input can lead to server crash abruptly.
+2. the query has to be protected by try..catch block to catch any error resulted from query.
+
+
 - What additional security mechanisms can you incorporate to prevent such attacks?
+
+1. sanitize the query inputs just for safety.
+2. probably, rate limiting - express middleware function 
