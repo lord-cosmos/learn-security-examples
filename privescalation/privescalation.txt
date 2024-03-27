@@ -1,0 +1,9 @@
+
+The vulnerability is the attacker can send query parameter - userId anything. If that hits, the user with "admin" role
+from the users collection. Then, hitting this endpoint can directly allow the attacker to change
+the role information/privileges of others.
+
+This is happening because, we are not checking if the client whoever is sending the request
+to current endpoint is a valid user or not.
+
+We can solve it by adding session management mechanism to validate the client/user.
