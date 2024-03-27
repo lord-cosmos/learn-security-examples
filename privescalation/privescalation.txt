@@ -7,3 +7,9 @@ This is happening because, we are not checking if the client whoever is sending 
 to current endpoint is a valid user or not.
 
 We can solve it by adding session management mechanism to validate the client/user.
+
+Additional Mechanisms
+- No session hijacking - set cookie to httpOnly : true.
+and by set sameSite: true.
+- No CSRF (csrf mechanism)
+- token - 2factor auth.
